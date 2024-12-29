@@ -74,6 +74,12 @@ export default function Home() {
                 className="form-control"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    addTodo();
+                  }
+                }}
                 placeholder="Yeni bir todo ekle"
               />
               <button className="btn btn-success" onClick={addTodo}>
